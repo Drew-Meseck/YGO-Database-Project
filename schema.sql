@@ -6,6 +6,7 @@ create table if not exists card (
 	ID char(10) not null primary key,
 	Title varchar(255),
 	box varchar(4),
+	classification varchar(20),
 	Rarity varchar(10),
 	Attribute varchar(10),
 	_Type varchar(15),
@@ -14,7 +15,6 @@ create table if not exists card (
 	ATK integer(10),
 	DEF integer(10),
 	Summon varchar(10),
-	Eff varchar(1),
 	Price double
 );
 
