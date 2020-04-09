@@ -3,7 +3,30 @@
 
 
 def generate_line(line):
-    pass
+    if(line[3] == "Spell" || line[3] == "Trap"):
+        ID = line[1]
+        title = line[2]
+        classify = line[3]
+        rarity = line[4]
+        price = 0
+        _type = line[7]
+        _Desc = line[11]
+        #format write for spell/trap to fout
+    else:
+        ID = line[1]
+        title = line[2]
+        classify = line[3]
+        rarity = line[4]
+        price = 0
+        attr = line[6]
+        _type = line[7]
+        lvl = line[8]
+        atk = line[9]
+        de = line[10]
+        _Desc = line[11]
+        #format write for monster to fout
+
+
 
 
 def generate_insert(fin, fout):
