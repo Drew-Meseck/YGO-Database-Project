@@ -11,7 +11,6 @@ create table if not exists card (
 	Attribute varchar(10),
 	_Type varchar(15),
 	Lvl integer(10),
-	Descr varchar(255),
 	ATK integer(10),
 	DEF integer(10),
 	Price double
