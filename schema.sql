@@ -14,7 +14,6 @@ create table if not exists card (
 	Descr varchar(255),
 	ATK integer(10),
 	DEF integer(10),
-	Summon varchar(10),
 	Price double
 );
 
