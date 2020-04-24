@@ -32,22 +32,21 @@ drop table if exists Orders;
 create table if not exists Orders (
 	Order_ID integer not null primary key,
 	Payment_ID integer,
-	Shipping_Address varchar(255),
 	Customer_ID integer
 );
 drop table if exists Order_Contents;
 create table if not exists Order_Contents (
-	Order_ID integer not null primary key,
+	UID integer not null primary key,
+    Order_ID integer,
 	Product_ID varchar(10),
-	Amount varchar(20)
+	Amount integer	
 );
 drop table if exists Payments;
 create table if not exists Payments (
 	Payment_ID integer not null primary key,
 	Order_ID integer,
 	Customer_ID integer,
-	Order_Amount varchar(20),
-	CCN integer
+    Amount integer
 );
 drop table if exists Customers;
 create table if not exists Customers (
@@ -59,21 +58,41 @@ create table if not exists Customers (
 drop table if exists Login;
 create table if not exists Login (
 	Username varchar(20) not null primary key,
-	Password varchar(25)
+	Pass varchar(25)
 );
 drop table if exists Tournament;
 create table if not exists Tournament (
 	Tid integer not null primary key,
 	Title varchar(20),
 	Top_Deck varchar(20),
-	Tdate date,
+	Tdate varchar(20),
 	location varchar(20),
 	_Type varchar(10)
 );
 drop table if exists Tournament_Participants;
 create table if not exists Tournament_Participants (
-	Customer_ID integer not null primary key,
+	Participant_ID integer not null primary key,
+    Customer_ID integer, 
 	Tid integer,
 	Record varchar(5),
 	Placement integer
+);
+drop table if exists data_log;
+create table if not exists data_log(
+	action text,
+    id integer,
+    stamp datetime,
+    tab text
+); 
+drop table if exists prod_log;
+create table if not exists prod_log(
+	action text,
+    id varchar(15),
+    stamp datetime,
+    tab text
+);
+drop table if exists payment_avg_log;
+create table if not exists payment_avg_log(
+	stamp datetime,
+    avg_amount integer
 );
